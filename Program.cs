@@ -6,23 +6,12 @@ namespace T05Ejercicio16
     {
         static void Main()
         {
-            int[] array = { 1, 5, 4, 3, 3, 2, 1 };
-            //Utilizo el método Reverse de System.Linq
-            //para invertir los valores de un array
+            int[] array = { 1, 2, 3, 4, 3, 2, 1 };
+            //Invierto el array
             int[] arrayInverso = array.Reverse().ToArray();
-
-            Console.WriteLine("Los elementos del array original por orden son: ");
-            foreach (int i in array)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine();
-            Console.WriteLine("Los elementos del array original invertidos son: ");
-            foreach (int i in arrayInverso)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine();
+            //Utilizo el método Equal para ver si son iguales
+            bool capicua = array.SequenceEqual(arrayInverso);
+            Console.WriteLine("El array {0} capicua.", capicua ? "es" : "no es");
         }
     }
 }
